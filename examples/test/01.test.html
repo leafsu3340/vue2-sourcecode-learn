@@ -1,0 +1,43 @@
+<!--
+ * @Description: 
+ * @Author: dengxiaodong
+ * @Date: 2021-03-05 11:54:37
+ * @LastEditors: dengxiaodong
+ * @LastEditTime: 2021-03-05 14:39:06
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div @click="add">{{foo.hello}}</div>
+    <p>Counter: {{counter}}</p>
+  </div>
+  <script src="../../dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        counter: 0,
+        foo: {
+          hello: 'hellword!'
+        }
+      },
+      methods: {
+        add() {
+          this.counter++;
+        }
+      },
+      watch: {
+        counter(newValue, oldValue) {
+          console.log(newValue, oldValue);
+        }
+      },
+    })
+  </script>
+</body>
+</html>
